@@ -1,0 +1,2 @@
+# libappimageupdate
+AppImageUpdate Library
