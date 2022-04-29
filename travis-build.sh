@@ -33,6 +33,8 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	libgcrypt20-dev
 	libssh2-1-dev \
 	libssl-dev \
+	libc6-dev/trixie \
+	locales/trixie \
 	zlib1g-dev
 
 ### Clone repo.
