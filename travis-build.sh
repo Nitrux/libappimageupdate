@@ -52,6 +52,10 @@ cp -r libappimage/* libappimageupdate/lib/libappimage/
 cp -r cpr/* libappimageupdate/lib/cpr/
 cp -r googletest/* libappimageupdate/lib/gtest/
 
+cp -r cpr/* libappimageupdate/lib/zsync2/lib/cpr
+cp -r googletest/* libappimageupdate/lib/zsync2/lib/gtest
+
+
 rm -rf zsync2/ sanitizers-cmake/ libappimage/ cpr/ googletest/
 
 ### Compile Source
