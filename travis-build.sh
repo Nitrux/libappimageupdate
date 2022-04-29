@@ -33,6 +33,7 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	libcurl4-nss-dev \
 	libfuse-dev \
 	automake \
+	libtool \
 	zlib1g-dev
 
 ### Clone repo.
