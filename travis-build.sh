@@ -50,7 +50,7 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 
 ### Install Package Build Dependencies #2
 
-DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
+DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends --allow-downgrades \
 	argagg-dev \
 	libgcrypt20-dev \
 	libssh2-1-dev \
