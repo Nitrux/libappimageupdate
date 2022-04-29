@@ -10,6 +10,11 @@ curl -L https://packagecloud.io/nitrux/testing/gpgkey | apt-key add -;
 
 DEBIAN_FRONTEND=noninteractive apt -qq update
 
+### Upgrade Glib
+
+DEBIAN_FRONTEND=noninteractive apt -qq -yy install --only-upgrade \
+	libc6
+
 ### Install Build Tools #1
 
 DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
