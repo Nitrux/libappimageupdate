@@ -63,6 +63,7 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends --all
 	libglib2.0-bin/trixie \
 	libglib2.0-dev-bin/trixie \
 	libglib2.0-dev/trixie \
+	libgirepository-1.0-1/trixie \
 	libcairo2-dev \
 	librsvg2-dev \
 	zlib1g-dev
