@@ -31,6 +31,7 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	argagg-dev \
 	libcurl4-nss-dev/trixie \
 	libcurl3-nss/trixie \
+	libldap-2.5-0/trixie \
 	libgcrypt20-dev \
 	libssh2-1-dev \
 	libssl-dev \
