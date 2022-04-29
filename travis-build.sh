@@ -49,8 +49,6 @@ mv AppImageUpdate/ libappimageupdate/
 cp -r zsync2/* libappimageupdate/lib/zsync2/
 cp -r sanitizers-cmake/* libappimageupdate/lib/sanitizers-cmake/
 cp -r libappimage/* libappimageupdate/lib/libappimage/
-cp -r cpr/* libappimageupdate/lib/cpr/
-cp -r googletest/* libappimageupdate/lib/gtest/
 
 cp -r cpr/* libappimageupdate/lib/zsync2/lib/cpr
 cp -r googletest/* libappimageupdate/lib/zsync2/lib/gtest
