@@ -36,15 +36,15 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 ### Clone repo.
 
 git clone --single-branch --branch main https://github.com/AppImage/AppImageUpdate.git
-git clone --single-branch --branch master https://github.com/libcpr/cpr.git
-git clone --single-branch --branch main https://github.com/google/googletest.git
-git clone --single-branch --branch master https://github.com/Taywee/args.git
+git clone --single-branch --branch master https://github.com/AppImage/zsync2.git
+git clone --single-branch --branch master https://github.com/arsenm/sanitizers-cmake.git
+git clone --single-branch --branch master https://github.com/AppImage/libappimage.git
 
 mv AppImageUpdate/ libappimageupdate/
 
-cp -r cpr/* libappimageupdate/lib/cpr/
-cp -r googletest/* libappimageupdate/lib/gtest/
-cp -r args/* libappimageupdate/lib/args/
+cp -r zsync2/* libappimageupdate/lib/zsync2/
+cp -r sanitizers-cmake/* libappimageupdate/lib/sanitizers-cmake/
+cp -r libappimage/* libappimageupdate/lib/libappimage/
 
 ### Compile Source
 
