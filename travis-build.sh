@@ -47,6 +47,7 @@ git clone --single-branch --branch master https://github.com/arsenm/sanitizers-c
 git clone --single-branch --branch master https://github.com/AppImage/libappimage.git
 git clone --single-branch --branch master https://github.com/libcpr/cpr.git
 git clone --single-branch --branch main https://github.com/google/googletest.git
+git clone --single-branch --branch master https://github.com/Taywee/args.git
 
 mv AppImageUpdate/ libappimageupdate/
 
