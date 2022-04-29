@@ -10,6 +10,8 @@ DEBIAN_FRONTEND=noninteractive apt -qq update
 
 DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	ca-certificates \
+	pkg-config \
+	libcurl4 \
 	git \
 	cmake \
 	checkinstall \
