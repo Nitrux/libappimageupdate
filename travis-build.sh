@@ -30,6 +30,7 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	libssh2-1-dev \
 	libssl-dev \
 	desktop-file-utils \
+	libcurl4-nss-dev \
 	libfuse-dev \
 	zlib1g-dev
 
