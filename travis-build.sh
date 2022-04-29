@@ -7,9 +7,9 @@ set -xe
 DEBIAN_FRONTEND=noninteractive apt -qq update
 DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	ca-certificates \
-	wget \
 	curl \
-	gnupg2
+	gnupg2 \
+	wget
 
 ### Update sources
 
@@ -39,35 +39,35 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --only-upgrade \
 ### Install Package Build Dependencies #1
 
 DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
-	pkg-config \
-	python3-dev \
-	git \
-	cmake \
-	checkinstall \
 	automake \
+	checkinstall \
+	cmake \
+	g++ \
+	git \
 	libtool \
-	g++
+	pkg-config \
+	python3-dev
 
 ### Install Package Build Dependencies #2
 
 DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends --allow-downgrades \
 	argagg-dev \
-	libgcrypt20-dev \
-	libssh2-1-dev \
-	libssl-dev \
 	desktop-file-utils \
+	gir1.2-freedesktop/trixie \
+	gir1.2-glib-2.0/trixie \
+	libcairo2-dev \
 	libcurl4-nss-dev \
 	libfuse-dev \
-	xxd \
+	libgcrypt20-dev \
+	libgirepository-1.0-1/trixie \
 	libglib2.0-0/trixie \
 	libglib2.0-bin/trixie \
 	libglib2.0-dev-bin/trixie \
 	libglib2.0-dev/trixie \
-	libgirepository-1.0-1/trixie \
-	gir1.2-glib-2.0/trixie \
-	gir1.2-freedesktop/trixie \
-	libcairo2-dev \
 	librsvg2-dev \
+	libssh2-1-dev \
+	libssl-dev \
+	xxd \
 	zlib1g-dev
 
 ### Clone repo.
@@ -107,6 +107,8 @@ cmake \
 	-DCMAKE_INSTALL_LIBDIR=lib/x86_64-linux-gnu ..
 
 make -j$(nproc)
+
+mkdir -p /usr/lib/cmake/AppImageUpdate
 
 ### Run checkinstall and Build Debian Package
 ### DO NOT USE debuild, screw it
