@@ -30,6 +30,7 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	argagg-dev \
 	libcurl4-nss-dev/trixie \
+	libnss3/trixie \
 	libgcrypt20-dev \
 	libssh2-1-dev \
 	libssl-dev \
@@ -57,7 +58,7 @@ cp -r libappimage/* libappimageupdate/lib/libappimage/
 
 cp -r cpr/* libappimageupdate/lib/zsync2/lib/cpr
 cp -r googletest/* libappimageupdate/lib/zsync2/lib/gtest
-cp -r args/* libappimageupdate/lib/zsync2/lib/args/
+cp -r args/* libappimageupdate/lib/zsync2/lib/args
 
 rm -rf zsync2/ sanitizers-cmake/ libappimage/ cpr/ googletest/
 
