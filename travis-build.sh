@@ -31,17 +31,20 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 
 DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	zlib1g-dev \
-	argagg-dev \
-	zsync2
+	argagg-dev
 
 ### Clone repo.
 
 git clone --single-branch --branch main https://github.com/AppImage/AppImageUpdate.git
-git submodule update --init --recursive
+git clone --single-branch --branch master https://github.com/libcpr/cpr.git
+git clone --single-branch --branch main https://github.com/google/googletest.git
+git clone --single-branch --branch master https://github.com/Taywee/args.git
 
 mv AppImageUpdate/ libappimageupdate/
 
-ls -l libappimageupdate/
+cp -r cpr/* libappimageupdate/lib/cpr/
+cp -r googletest/* libappimageupdate/lib/gtest/
+cp -r args/* libappimageupdate/lib/args/
 
 ### Compile Source
 
