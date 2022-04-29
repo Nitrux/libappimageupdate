@@ -2,22 +2,14 @@
 
 set -xe
 
-### Install Build Tools #1
+### Basic packages
 
 DEBIAN_FRONTEND=noninteractive apt -qq update
 DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	ca-certificates \
-	pkg-config \
-	curl \
-	python3-dev \
-	git \
-	cmake \
-	checkinstall \
-	gnupg2 \
-	automake \
-	libtool \
 	wget \
-	g++
+	curl \
+	gnupg2
 
 ### Update sources
 
@@ -43,6 +35,18 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --only-upgrade --allow-downgr
 
 DEBIAN_FRONTEND=noninteractive apt -qq -yy install --only-upgrade \
 	libc6
+
+### Install Package Build Dependencies #1
+
+DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
+	pkg-config \
+	python3-dev \
+	git \
+	cmake \
+	checkinstall \
+	automake \
+	libtool \
+	g++
 
 ### Install Package Build Dependencies #2
 
