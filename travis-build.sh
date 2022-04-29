@@ -29,7 +29,7 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 
 DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	argagg-dev \
-	libcurl4-nss-dev \
+	libcurl4-nss-dev/trixie \
 	libgcrypt20-dev \
 	libssh2-1-dev \
 	libssl-dev \
