@@ -9,10 +9,11 @@ DEBIAN_FRONTEND=noninteractive apt -qq update
 ### Install Build Tools #1
 
 DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
-	 git \
-	 cmake \
-	 checkinstall \
-	 g++
+	ca-certificates \
+	git \
+	cmake \
+	checkinstall \
+	g++
 
 ### Install Package Build Dependencies #2
 
