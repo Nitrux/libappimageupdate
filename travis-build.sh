@@ -46,6 +46,8 @@ cp -r zsync2/* libappimageupdate/lib/zsync2/
 cp -r sanitizers-cmake/* libappimageupdate/lib/sanitizers-cmake/
 cp -r libappimage/* libappimageupdate/lib/libappimage/
 
+rm -rf zsync2/ sanitizers-cmake/ libappimage/
+
 ### Compile Source
 
 mkdir -p libappimageupdate/build && cd libappimageupdate/build
