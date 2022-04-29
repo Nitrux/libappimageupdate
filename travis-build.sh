@@ -30,8 +30,12 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 ### Install Package Build Dependencies #2
 
 DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
-	zlib1g-dev \
-	argagg-dev
+	argagg-dev \
+	libcurl4-nss-dev \
+	libgcrypt20-dev
+	libssh2-1-dev \
+	libssl-dev \
+	zlib1g-dev
 
 ### Clone repo.
 
