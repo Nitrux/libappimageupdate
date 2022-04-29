@@ -36,6 +36,7 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	libc6-dev/trixie \
 	locales/trixie \
 	desktop-file-utils \
+	libfuse-dev \
 	zlib1g-dev
 
 ### Clone repo.
