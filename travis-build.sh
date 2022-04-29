@@ -59,6 +59,10 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	libcurl4-nss-dev \
 	libfuse-dev \
 	xxd \
+	libglib2.0-0/trixie \
+	libglib2.0-bin/trixie \
+	libglib2.0-dev-bin/trixie \
+	libglib2.0-dev/trixie \
 	zlib1g-dev
 
 ### Clone repo.
