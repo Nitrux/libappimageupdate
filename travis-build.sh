@@ -1,6 +1,6 @@
-#!/bin/bash
+#! /bin/bash
 
-set -x
+set -xe
 
 ### Install Build Tools #1
 
@@ -33,7 +33,7 @@ DEBIAN_FRONTEND=noninteractive apt -qq update
 
 #	Upgrade dpkg for zstd support.
 
-DEBIAN_FRONTEND=noninteractive apt -qq -yy install --only-upgrade \
+DEBIAN_FRONTEND=noninteractive apt -qq -yy install --only-upgrade --allow-downgrades \
 	dpkg=1.20.9ubuntu2 \
 	libc-bin=2.33-0ubuntu5 \
 	libc6=2.33-0ubuntu5 \
