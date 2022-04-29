@@ -21,7 +21,7 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 
 ### Clone repo.
 
-git clone --single-branch --branch master https://github.com/AppImage/AppImageUpdate.git
+git clone --single-branch --branch main https://github.com/AppImage/AppImageUpdate.git
 git submodule update --init --recursive
 
 mv AppImageUpdate/ libappimageupdate/
