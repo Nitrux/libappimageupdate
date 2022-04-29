@@ -21,11 +21,23 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 
 ### Update sources
 
+wget -qO /etc/apt/sources.list.d/nitrux-main-compat-repo.list https://raw.githubusercontent.com/Nitrux/iso-tool/development/configs/files/sources.list.nitrux
+
 wget -qO /etc/apt/sources.list.d/nitrux-testing-repo.list https://raw.githubusercontent.com/Nitrux/iso-tool/development/configs/files/sources.list.nitrux.testing
 
+curl -L https://packagecloud.io/nitrux/repo/gpgkey | apt-key add -;
+curl -L https://packagecloud.io/nitrux/compat/gpgkey | apt-key add -;
 curl -L https://packagecloud.io/nitrux/testing/gpgkey | apt-key add -;
 
 DEBIAN_FRONTEND=noninteractive apt -qq update
+
+#	Upgrade dpkg for zstd support.
+
+DEBIAN_FRONTEND=noninteractive apt -qq -yy install --only-upgrade \
+	dpkg=1.20.9ubuntu2 \
+	libc-bin=2.33-0ubuntu5 \
+	libc6=2.33-0ubuntu5 \
+	locales=2.33-0ubuntu5
 
 ### Upgrade Glib
 
