@@ -35,6 +35,7 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	libssl-dev \
 	libc6-dev/trixie \
 	locales/trixie \
+	desktop-file-utils \
 	zlib1g-dev
 
 ### Clone repo.
