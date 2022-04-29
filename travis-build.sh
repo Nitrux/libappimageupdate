@@ -31,7 +31,8 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 
 DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	zlib1g-dev \
-	argagg-dev
+	argagg-dev \
+	zsync2
 
 ### Clone repo.
 
