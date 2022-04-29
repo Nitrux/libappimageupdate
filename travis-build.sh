@@ -14,6 +14,9 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	cmake \
 	checkinstall \
 	gnupg2 \
+	automake \
+	libtool \
+	wget \
 	g++
 
 ### Update sources
@@ -39,9 +42,6 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	desktop-file-utils \
 	libcurl4-nss-dev \
 	libfuse-dev \
-	automake \
-	libtool \
-	wget \
 	zlib1g-dev
 
 ### Clone repo.
