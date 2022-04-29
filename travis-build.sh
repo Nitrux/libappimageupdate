@@ -17,7 +17,8 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 ### Install Package Build Dependencies #2
 
 DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
-	zlib1g-dev
+	zlib1g-dev \
+	argagg-dev
 
 ### Clone repo.
 
