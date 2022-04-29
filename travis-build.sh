@@ -83,7 +83,7 @@ make -j$(nproc)
 >> description-pak printf "%s\n" \
 	'AppImageUpdate lets you update AppImages.' \
 	'' \
-	'Update AppImage using information embedded in the AppImage itself.' \	
+	'Update AppImage using information embedded in the AppImage itself.' \
 	'' \
 	''
 
