@@ -16,6 +16,7 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	ca-certificates \
 	pkg-config \
 	curl \
+	python3-dev \
 	git \
 	cmake \
 	checkinstall \
