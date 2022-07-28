@@ -1,4 +1,4 @@
-# libappimageupdate [![Build Status](https://app.travis-ci.com/Nitrux/libappimageupdate.svg?branch=main)](https://app.travis-ci.com/Nitrux/libappimageupdate)
+# libappimageupdate
 
 AppImageUpdate Library.
 

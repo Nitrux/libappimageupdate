@@ -1,25 +1,13 @@
 #! /bin/bash
 
-set -xe
-
-### Basic packages
-
-DEBIAN_FRONTEND=noninteractive apt -qq update
-DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
-	ca-certificates \
-	curl \
-	gnupg2 \
-	wget
+set -x
 
 ### Update sources
 
-wget -qO /etc/apt/sources.list.d/nitrux-main-compat-repo.list https://raw.githubusercontent.com/Nitrux/iso-tool/development/configs/files/sources.list.nitrux
-
-wget -qO /etc/apt/sources.list.d/nitrux-testing-repo.list https://raw.githubusercontent.com/Nitrux/iso-tool/development/configs/files/sources.list.nitrux.testing
+wget -qO /etc/apt/sources.list.d/nitrux.list https://raw.githubusercontent.com/Nitrux/iso-tool/development/configs/files/sources.list.nitrux
 
 curl -L https://packagecloud.io/nitrux/repo/gpgkey | apt-key add -;
 curl -L https://packagecloud.io/nitrux/compat/gpgkey | apt-key add -;
-curl -L https://packagecloud.io/nitrux/testing/gpgkey | apt-key add -;
 
 DEBIAN_FRONTEND=noninteractive apt -qq update
 
@@ -31,46 +19,12 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --only-upgrade --allow-downgr
 	libc6=2.33-0ubuntu5 \
 	locales=2.33-0ubuntu5
 
-### Upgrade Glib
+### Upgrade GNU LibC
 
 DEBIAN_FRONTEND=noninteractive apt -qq -yy install --only-upgrade \
 	libc6
-
-### Install Package Build Dependencies #1
-
-DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
-	automake \
-	checkinstall \
-	cmake \
-	g++ \
-	git \
-	libtool \
-	pkg-config \
-	python3-dev
-
-### Install Package Build Dependencies #2
-
-DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends --allow-downgrades \
-	argagg-dev \
-	desktop-file-utils \
-	gir1.2-freedesktop/trixie \
-	gir1.2-glib-2.0/trixie \
-	libcairo2-dev \
-	libcurl4-nss-dev \
-	libfuse-dev \
-	libgcrypt20-dev \
-	libgirepository-1.0-1/trixie \
-	libglib2.0-0/trixie \
-	libglib2.0-bin/trixie \
-	libglib2.0-dev-bin/trixie \
-	libglib2.0-dev/trixie \
-	librsvg2-dev \
-	libssh2-1-dev \
-	libssl-dev \
-	xxd \
-	zlib1g-dev
-
-### Clone repo.
+	
+### Download Source
 
 git clone --single-branch --branch main https://github.com/AppImage/AppImageUpdate.git
 git clone --single-branch --branch master https://github.com/AppImage/zsync2.git
@@ -94,24 +48,26 @@ rm -rf zsync2/ sanitizers-cmake/ libappimage/ cpr/ googletest/
 
 ### Compile Source
 
-mkdir -p libappimageupdate/build && cd libappimageupdate/build
+mkdir -p build && cd build
 
 cmake \
 	-DCMAKE_INSTALL_PREFIX=/usr \
+	-DENABLE_BSYMBOLICFUNCTIONS=OFF \
+	-DQUICK_COMPILER=ON \
 	-DCMAKE_BUILD_TYPE=Release \
 	-DCMAKE_INSTALL_SYSCONFDIR=/etc \
 	-DCMAKE_INSTALL_LOCALSTATEDIR=/var \
+	-DCMAKE_EXPORT_NO_PACKAGE_REGISTRY=ON \
 	-DCMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY=ON \
 	-DCMAKE_INSTALL_RUNSTATEDIR=/run "-GUnix Makefiles" \
 	-DCMAKE_VERBOSE_MAKEFILE=ON \
-	-DCMAKE_INSTALL_LIBDIR=lib/x86_64-linux-gnu ..
+	-DCMAKE_INSTALL_LIBDIR=lib/x86_64-linux-gnu ../libappimageupdate/
 
 make -j$(nproc)
 
 mkdir -p /usr/lib/cmake/AppImageUpdate
 
 ### Run checkinstall and Build Debian Package
-### DO NOT USE debuild, screw it
 
 >> description-pak printf "%s\n" \
 	'AppImageUpdate lets you update AppImages.' \
@@ -124,7 +80,7 @@ checkinstall -D -y \
 	--install=no \
 	--fstrans=yes \
 	--pkgname=libappimageupdate \
-	--pkgversion=2.0.0-alpha-1-20220124 \
+	--pkgversion=$PACKAGE_VERSION \
 	--pkgarch=amd64 \
 	--pkgrelease="1" \
 	--pkglicense=LGPL-3 \
