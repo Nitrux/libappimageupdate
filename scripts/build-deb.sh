@@ -26,7 +26,7 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --only-upgrade \
 
 ### Use these packages from our repositories
 
-DEBIAN_FRONTEND=noninteractive apt -qq -yy install --only-upgrade --allow-downgrades \
+DEBIAN_FRONTEND=noninteractive apt -qq -yy install --allow-downgrades \
 	gir1.2-freedesktop/trixie \
 	gir1.2-glib-2.0/trixie \
 	libgirepository-1.0-1/trixie \
