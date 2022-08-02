@@ -2,15 +2,6 @@
 
 set -x
 
-### Update sources
-
-wget -qO /etc/apt/sources.list.d/nitrux.list https://raw.githubusercontent.com/Nitrux/iso-tool/development/configs/files/sources.list.nitrux
-
-curl -L https://packagecloud.io/nitrux/repo/gpgkey | apt-key add -;
-curl -L https://packagecloud.io/nitrux/compat/gpgkey | apt-key add -;
-
-DEBIAN_FRONTEND=noninteractive apt -qq update
-
 ### Download Source
 
 git clone --single-branch --branch $LIBAPPIMAGEUPDATE_BRANCH https://github.com/AppImage/AppImageUpdate.git
