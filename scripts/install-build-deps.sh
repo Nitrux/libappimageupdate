@@ -28,6 +28,6 @@ $APT_COMMAND install -qy --no-install-recommends \
     libtool \
     pkg-config \
     python3-dev \
-    wget
+    wget \
     xxd \
     zlib1g-dev
