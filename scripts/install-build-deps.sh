@@ -26,6 +26,7 @@ $APT_COMMAND install -qy --no-install-recommends \
     libssh2-1-dev \
     libssl-dev \
     libtool \
+    libxpm-dev \
     pkg-config \
     python3-dev \
     wget \
