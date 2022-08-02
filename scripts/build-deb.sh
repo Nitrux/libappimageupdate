@@ -26,7 +26,7 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --only-upgrade \
 	
 ### Download Source
 
-git clone --single-branch --branch main https://github.com/AppImage/AppImageUpdate.git
+git clone --single-branch --branch $LIBAPPIMAGEUPDATE_BRANCH https://github.com/AppImage/AppImageUpdate.git
 git clone --single-branch --branch master https://github.com/AppImage/zsync2.git
 git clone --single-branch --branch master https://github.com/arsenm/sanitizers-cmake.git
 git clone --single-branch --branch master https://github.com/AppImage/libappimage.git
