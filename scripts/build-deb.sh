@@ -72,7 +72,7 @@ mkdir -p /usr/lib/cmake/AppImageUpdate
 >> description-pak printf "%s\n" \
 	'AppImageUpdate lets you update AppImages.' \
 	'' \
-	'Update AppImage using information embedded in the AppImage itself.' \
+	'Update AppImages using information embedded in the AppImage itself.' \
 	'' \
 	''
 
