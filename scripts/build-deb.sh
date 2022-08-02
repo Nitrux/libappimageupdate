@@ -23,7 +23,18 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --only-upgrade --allow-downgr
 
 DEBIAN_FRONTEND=noninteractive apt -qq -yy install --only-upgrade \
 	libc6
-	
+
+### Use these packages from our repositories
+
+DEBIAN_FRONTEND=noninteractive apt -qq -yy install --only-upgrade --allow-downgrades \
+	gir1.2-freedesktop/trixie \
+	gir1.2-glib-2.0/trixie \
+	libgirepository-1.0-1/trixie \
+	libglib2.0-0/trixie \
+	libglib2.0-bin/trixie \
+	libglib2.0-dev-bin/trixie \
+	libglib2.0-dev/trixie
+
 ### Download Source
 
 git clone --single-branch --branch $LIBAPPIMAGEUPDATE_BRANCH https://github.com/AppImage/AppImageUpdate.git

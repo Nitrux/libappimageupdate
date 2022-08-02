@@ -16,19 +16,12 @@ $APT_COMMAND install -qy --no-install-recommends \
     curl \
     desktop-file-utils \
     g++ \
-    gir1.2-freedesktop/trixie \
-    gir1.2-glib-2.0/trixie \
     git \
     gnupg2 \
     libcairo2-dev \
     libcurl4-nss-dev \
     libfuse-dev \
     libgcrypt20-dev \
-    libgirepository-1.0-1/trixie \
-    libglib2.0-0/trixie \
-    libglib2.0-bin/trixie \
-    libglib2.0-dev-bin/trixie \
-    libglib2.0-dev/trixie \
     librsvg2-dev \
     libssh2-1-dev \
     libssl-dev \
