@@ -4,25 +4,27 @@ set -x
 
 ### Download Source
 
-git clone --single-branch --branch $LIBAPPIMAGEUPDATE_BRANCH https://github.com/AppImage/AppImageUpdate.git
-git clone --single-branch --branch master https://github.com/AppImage/zsync2.git
-git clone --single-branch --branch master https://github.com/arsenm/sanitizers-cmake.git
-git clone --single-branch --branch master https://github.com/AppImage/libappimage.git
-git clone --single-branch --branch master https://github.com/libcpr/cpr.git
-git clone --single-branch --branch main https://github.com/google/googletest.git
-git clone --single-branch --branch master https://github.com/Taywee/args.git
+git clone --recursive --single-branch --branch $LIBAPPIMAGEUPDATE_BRANCH \
+  https://github.com/AppImage/AppImageUpdate.git libappimageupdate
 
-mv AppImageUpdate/ libappimageupdate/
+# git clone --single-branch --branch master https://github.com/AppImage/zsync2.git
+# git clone --single-branch --branch master https://github.com/arsenm/sanitizers-cmake.git
+# git clone --single-branch --branch master https://github.com/AppImage/libappimage.git
+# git clone --single-branch --branch master https://github.com/libcpr/cpr.git
+# git clone --single-branch --branch main https://github.com/google/googletest.git
+# git clone --single-branch --branch master https://github.com/Taywee/args.git
 
-cp -r zsync2/* libappimageupdate/lib/zsync2/
-cp -r sanitizers-cmake/* libappimageupdate/lib/sanitizers-cmake/
-cp -r libappimage/* libappimageupdate/lib/libappimage/
+# mv AppImageUpdate/ libappimageupdate/
 
-cp -r cpr/* libappimageupdate/lib/zsync2/lib/cpr
-cp -r googletest/* libappimageupdate/lib/zsync2/lib/gtest
-cp -r args/* libappimageupdate/lib/zsync2/lib/args
+# cp -r zsync2/* libappimageupdate/lib/zsync2/
+# cp -r sanitizers-cmake/* libappimageupdate/lib/sanitizers-cmake/
+# cp -r libappimage/* libappimageupdate/lib/libappimage/
 
-rm -rf zsync2/ sanitizers-cmake/ libappimage/ cpr/ googletest/
+# cp -r cpr/* libappimageupdate/lib/zsync2/lib/cpr
+# cp -r googletest/* libappimageupdate/lib/zsync2/lib/gtest
+# cp -r args/* libappimageupdate/lib/zsync2/lib/args
+
+# rm -rf zsync2/ sanitizers-cmake/ libappimage/ cpr/ googletest/
 
 ### Compile Source
 
@@ -64,7 +66,7 @@ checkinstall -D -y \
 	--pkglicense=LGPL-3 \
 	--pkggroup=libs \
 	--pkgsource=libappimageupdate \
-	--pakdir=../.. \
+	--pakdir=../ \
 	--maintainer=uri_herrera@nxos.org \
 	--provides=libappimageupdate \
 	--requires="libc6,zlib1g" \
