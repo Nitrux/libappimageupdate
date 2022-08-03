@@ -31,4 +31,5 @@ $APT_COMMAND install -qy --no-install-recommends \
     python3-dev \
     wget \
     xxd \
-    zlib1g-dev
+    zlib1g-dev \
+    nlohmann-json3-dev
