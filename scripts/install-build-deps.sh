@@ -26,6 +26,7 @@ $APT_COMMAND install -qy --no-install-recommends \
     libcurl4-nss-dev \
     libfuse-dev \
     libgcrypt20-dev \
+    libgpgme11 \
     librsvg2-dev \
     libssh2-1-dev \
     libssl-dev \
