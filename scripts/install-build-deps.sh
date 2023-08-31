@@ -18,6 +18,10 @@ $APT_COMMAND install -qy --no-install-recommends \
     g++ \
     git \
     gnupg2 \
+    libboost-program-options-dev \
+    libboost-system-dev \
+    libboost-test-dev \
+    libboost-thread-dev \
     libcairo2-dev \
     libcurl4-nss-dev \
     libfuse-dev \
@@ -27,9 +31,9 @@ $APT_COMMAND install -qy --no-install-recommends \
     libssl-dev \
     libtool \
     libxpm-dev \
+    nlohmann-json3-dev \
     pkg-config \
     python3-dev \
     wget \
     xxd \
-    zlib1g-dev \
-    nlohmann-json3-dev
+    zlib1g-dev
