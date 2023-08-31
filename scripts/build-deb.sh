@@ -41,11 +41,13 @@ cmake \
 	-DCMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY=ON \
 	-DCMAKE_INSTALL_RUNSTATEDIR=/run "-GUnix Makefiles" \
 	-DCMAKE_VERBOSE_MAKEFILE=ON \
-	-DCMAKE_INSTALL_LIBDIR=lib/x86_64-linux-gnu ../libappimageupdate/
+	-DCMAKE_INSTALL_LIBDIR=/usr/lib/x86_64-linux-gnu ../libappimageupdate/
 
 make -j$(nproc)
 
 mkdir -p /usr/lib/cmake/AppImageUpdate
+
+make install
 
 ### Run checkinstall and Build Debian Package
 
@@ -66,7 +68,7 @@ checkinstall -D -y \
 	--pkglicense=LGPL-3 \
 	--pkggroup=libs \
 	--pkgsource=libappimageupdate \
-	--pakdir=../ \
+	--pakdir=. \
 	--maintainer=uri_herrera@nxos.org \
 	--provides=libappimageupdate \
 	--requires="libc6,zlib1g" \
